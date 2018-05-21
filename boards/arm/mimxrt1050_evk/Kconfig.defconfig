@@ -44,4 +44,12 @@ config TEXT_SECTION_OFFSET
 
 endif
 
+if CODE_HYPERFLASH
+
+# Set IVT start address
+config IVT_SECTION_OFFSET
+	default 0x1000
+
+endif
+
 endif # BOARD_MIMXRT1050_EVK

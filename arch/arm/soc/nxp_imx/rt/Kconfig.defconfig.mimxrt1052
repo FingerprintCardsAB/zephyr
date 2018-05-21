@@ -44,4 +44,11 @@ config UART_MCUX_LPUART
 
 endif # SERIAL
 
+if XIP
+
+config XIP_DCD
+    def_bool y
+    
+endif # XIP
+
 endif # SOC_MIMXRT1052

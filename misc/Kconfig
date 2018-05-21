@@ -55,6 +55,13 @@ config TEXT_SECTION_OFFSET
 	  alignment requirements on most ARM targets, although some targets
 	  may require smaller or larger values.
 
+config IVT_SECTION_OFFSET
+    hex "IVT section offset"
+    default 0
+    help
+      For NXP MIMXRT1050-EVK. To be able to link the IVT section at the
+      right address.
+
 config HAVE_CUSTOM_LINKER_SCRIPT
 	prompt "Custom linker scripts provided"
 	def_bool n
