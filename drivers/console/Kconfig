@@ -143,6 +143,14 @@ config RTT_CONSOLE
 	  Segger J-Link software and displayed on a computer in real-time.
 	  Requires support for Segger J-Link on the companion IC onboard.
 
+config SWO_CONSOLE
+	bool
+	prompt "Use SWO console"
+	select CONSOLE_HAS_DRIVER
+	default n
+	help
+	  Emit console messages to SWO.
+
 config IPM_CONSOLE_SENDER
 	bool
 	prompt "Inter-processor Mailbox console sender"

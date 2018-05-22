@@ -1,6 +1,7 @@
 zephyr_sources_if_kconfig(uart_console.c)
 zephyr_sources_if_kconfig(ram_console.c)
 zephyr_sources_if_kconfig(rtt_console.c)
+zephyr_sources_if_kconfig(swo_console.c)
 zephyr_sources_if_kconfig(ipm_console_receiver.c)
 zephyr_sources_if_kconfig(ipm_console_sender.c)
 zephyr_sources_if_kconfig(uart_mcumgr.c)
