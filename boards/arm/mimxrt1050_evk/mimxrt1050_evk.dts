@@ -90,3 +90,7 @@
     status = "ok";
     current-speed = <115200>;
 };
+
+&spi1 {
+	status = "ok";
+};

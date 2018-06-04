@@ -190,6 +190,50 @@
 			label = "UART_8";
 			status = "disabled";
 		};
+
+		spi1: spi@40394000 {
+			compatible = "nxp,imx-lpspi";
+			reg = <0x40394000 0x4000>;
+			interrupts = <32 0>;
+			clocks = <&ccm IMX_CCM_LPSPI_CLK 0x6C 0>;
+			label = "SPI_1";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
+		spi2: spi@40398000 {
+			compatible = "nxp,imx-lpspi";
+			reg = <0x40398000 0x4000>;
+			interrupts = <33 0>;
+			clocks = <&ccm IMX_CCM_LPSPI_CLK 0x6C 2>;
+			label = "SPI_2";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
+		spi3: spi@4039C000 {
+			compatible = "nxp,imx-lpspi";
+			reg = <0x4039C000 0x4000>;
+			interrupts = <34 0>;
+			clocks = <&ccm IMX_CCM_LPSPI_CLK 0x6C 4>;
+			label = "SPI_3";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
+
+		spi4: spi@403A0000 {
+			compatible = "nxp,imx-lpspi";
+			reg = <0x403A0000 0x4000>;
+			interrupts = <35 0>;
+			clocks = <&ccm IMX_CCM_LPSPI_CLK 0x6C 6>;
+			label = "SPI_4";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			status = "disabled";
+		};
 	};
 };
 

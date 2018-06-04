@@ -44,6 +44,13 @@ config UART_MCUX_LPUART
 
 endif # SERIAL
 
+if SPI
+
+config SPI_MCUX_LPSPI
+	def_bool y
+
+endif # SPI
+
 if XIP
 
 config XIP_DCD

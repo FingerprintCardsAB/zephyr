@@ -57,6 +57,34 @@ static int mimxrt1050_evk_init(struct device *dev)
                 IOMUXC_SW_PAD_CTL_PAD_DSE(6));
 #endif
 
+#ifdef CONFIG_SPI_MCUX_LPSPI_1
+    /* LPSPI1 */
+    IOMUXC_SetPinMux(IOMUXC_GPIO_SD_B0_00_LPSPI1_SCK, 0);
+    IOMUXC_SetPinMux(IOMUXC_GPIO_SD_B0_01_LPSPI1_PCS0, 0);
+    IOMUXC_SetPinMux(IOMUXC_GPIO_SD_B0_02_LPSPI1_SDO, 0);
+    IOMUXC_SetPinMux(IOMUXC_GPIO_SD_B0_03_LPSPI1_SDI, 0);
+
+    IOMUXC_SetPinConfig(IOMUXC_GPIO_SD_B0_00_LPSPI1_SCK,
+                IOMUXC_SW_PAD_CTL_PAD_PKE_MASK |
+                IOMUXC_SW_PAD_CTL_PAD_SPEED(2) |
+                IOMUXC_SW_PAD_CTL_PAD_DSE(6));
+
+    IOMUXC_SetPinConfig(IOMUXC_GPIO_SD_B0_01_LPSPI1_PCS0,
+                IOMUXC_SW_PAD_CTL_PAD_PKE_MASK |
+                IOMUXC_SW_PAD_CTL_PAD_SPEED(2) |
+                IOMUXC_SW_PAD_CTL_PAD_DSE(6));
+
+    IOMUXC_SetPinConfig(IOMUXC_GPIO_SD_B0_02_LPSPI1_SDO,
+                IOMUXC_SW_PAD_CTL_PAD_PKE_MASK |
+                IOMUXC_SW_PAD_CTL_PAD_SPEED(2) |
+                IOMUXC_SW_PAD_CTL_PAD_DSE(6));
+
+    IOMUXC_SetPinConfig(IOMUXC_GPIO_SD_B0_03_LPSPI1_SDI,
+                IOMUXC_SW_PAD_CTL_PAD_PKE_MASK |
+                IOMUXC_SW_PAD_CTL_PAD_SPEED(2) |
+                IOMUXC_SW_PAD_CTL_PAD_DSE(6));
+#endif
+
 	return 0;
 }
 

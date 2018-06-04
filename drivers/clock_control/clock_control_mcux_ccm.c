@@ -29,6 +29,8 @@ static int mcux_ccm_get_subsys_rate(struct device *dev,
 				    u32_t *rate)
 {
 	u32_t clock_name = (u32_t) sub_system;
+	u32_t pll_freq;
+	u32_t mux;
 
 	switch (clock_name) {
 	case IMX_CCM_LPUART_CLK:
@@ -41,6 +43,27 @@ static int mcux_ccm_get_subsys_rate(struct device *dev,
 		}
 
 		break;
+	case IMX_CCM_LPSPI_CLK:
+	{
+		mux = CLOCK_GetMux(kCLOCK_LpspiMux);
+		if (mux == 0) {
+			pll_freq = CLOCK_GetFreq(kCLOCK_Usb1PllPfd1Clk);
+			*rate = pll_freq / (CLOCK_GetDiv(kCLOCK_LpspiDiv) + 1);
+		} else if (mux == 1) {
+			pll_freq = CLOCK_GetFreq(kCLOCK_Usb1PllPfd0Clk);
+			*rate = pll_freq / (CLOCK_GetDiv(kCLOCK_LpspiDiv) + 1);
+		} else if (mux == 2) {
+			pll_freq = CLOCK_GetFreq(kCLOCK_SysPllClk);
+			*rate = pll_freq / (CLOCK_GetDiv(kCLOCK_LpspiDiv) + 1);
+		} else if (mux == 3) {
+			pll_freq = CLOCK_GetFreq(kCLOCK_SysPllPfd2Clk);
+			*rate = pll_freq / (CLOCK_GetDiv(kCLOCK_LpspiDiv) + 1);
+		} else {
+			return -1;
+		}
+
+		break;
+	}
 	}
 
 	return 0;

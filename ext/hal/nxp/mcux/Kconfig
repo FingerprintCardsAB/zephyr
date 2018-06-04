@@ -75,4 +75,10 @@ config HAS_MCUX_TRNG
 	  Set if the true random number generator (TRNG) module is present in
 	  the SoC.
 
+config HAS_MCUX_LPSPI
+	bool
+	default n
+	help
+	  Set if the low power spi (LPSPI) module is present in the SoC.
+
 endif # HAS_MCUX
