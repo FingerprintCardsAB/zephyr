@@ -27,5 +27,11 @@ menuconfig UART_MCUX_LPUART_1
 	default n
 	help
 	  Enable UART 1.
+	  
+menuconfig UART_MCUX_LPUART_2
+    bool "UART 2"
+    default n
+    help
+      Enable UART 2.
 
 endif # UART_MCUX_LPUART

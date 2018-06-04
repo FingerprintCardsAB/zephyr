@@ -19,6 +19,7 @@
 		gpio-4= &gpio4;
 		gpio-5= &gpio5;
 		uart-1 = &uart1;
+		uart-2 = &uart2;
 		led0 = &green_led;
 		sw0 = &user_button;
 	};
@@ -83,4 +84,9 @@
 &uart1 {
 	status = "ok";
 	current-speed = <115200>;
+};
+
+&uart2 {
+    status = "ok";
+    current-speed = <115200>;
 };

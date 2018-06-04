@@ -33,6 +33,9 @@ if UART_MCUX_LPUART
 
 config UART_MCUX_LPUART_1
 	def_bool y
+	
+config UART_MCUX_LPUART_2
+    def_bool y
 
 endif # UART_MCUX_LPUART
 
